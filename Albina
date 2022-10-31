@@ -1,1 +1,47 @@
+# определить, все ли элементы последовательности равны между собой
 
+epsilon = 0.5
+current = float(input())
+seq_max = current
+seq_min = current
+
+while abs(current) > epsilon:
+      if current > seq_max:
+        seq_max = current
+      if current < seq_min:
+        seq_min = current
+      current = float(input())
+ if abs(seq_max - seq_min) < epsilon:
+      all_equal = True
+ else:
+     all_equal = False
+print('all_equal=',all_equal)
+
+
+# из stepik: печатаем все простые числа от а до b
+a=int(input())
+b=int(input())
+for i in range(a,b+1):
+    count=0
+    for j in range(1,i+1):
+        if i % j == 0:
+            count += 1
+    if count == 2:
+        print(i)
+    
+    
+# определить, является ли последовательность цифр числа упорядоченной справа налево по неубыванию:
+n=int(input())
+flag = True
+l = n % 10
+while n != 0:
+    k = n % 10
+    if k < l:
+        flag = False
+    else:
+        l = k
+    n = n // 10
+if flag == True:
+   print('YES')
+else:
+   print('NO')
